@@ -1,3 +1,4 @@
+'use strict';
 let btn = document.getElementById('btnSubmit');
 
 function validateForm() {
@@ -6,7 +7,7 @@ function validateForm() {
     document.getElementById('name_error').innerHTML = '';
     if (name == null || name == "" || name.length < 3) {
         error++;
-        document.getElementById('name_error').innerHTML = 'Username must be at least 3 characters';
+        document.getElementById('name_error').innerHTML = 'Username must be atleast 3 charecter';
     }
 
     var email = document.getElementById('signupEmail').value;
@@ -24,18 +25,11 @@ function validateForm() {
     document.getElementById('pass_error').innerHTML = '';
     if (pass == null || pass == ""|| pass.length < 6) {
         error++;
-        document.getElementById('pass_error').innerHTML = 'Password must be atleast 6 characters';
+        document.getElementById('pass_error').innerHTML = 'Password must be atleast 6 charecter';
     }
-
-    // var pass_again = document.getElementById('signupPassword').value;
-    // document.getElementById('pass_again_error').innerHTML = '';
-    // if (pass == null || pass == ""){
-    //     error++;
-    //     document.getElementById('pass_error').innerHTML = 'Password2 is required';
-    // }
-    else(pass_again_error !== pass) {
+    else if(pass_again !== pass) {
         error++;
-        document.getElementById('pass_again_error').innerHTML = 'Password2 is required';
+        document.getElementById('pass_again_error').innerHTML = 'Password2 dose not match';
     }
 
     if(error>0) {
